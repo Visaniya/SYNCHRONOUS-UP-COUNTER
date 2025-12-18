@@ -28,19 +28,67 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **Procedure**
 
-/* write all the steps invloved */
+```
+1. Open Quartus and create a new Verilog file.
+2. Copy and paste the corrected code and save the file.
+3. Compile the program to check for errors.
+4. Generate the RTL schematic and timing diagram.
+5. Simulate the design to verify the serial shift operation.
+```
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
-*/
+up counter
+```
+module UD_COUNTER(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+	if(!rst)
+		out<=0;
+	else 
+		out <= out+1;
+end
+endmodule
+
+```
+
+down counter
+
+```
+module UD_COUNTER(out,clk,rst);
+input clk,rst; 
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+if(!rst)
+	out<=4'b1111;
+else 
+	out <= out-1;
+end
+endmodule
+
+```
+Developed by: Visaniya S
+RegisterNumber: 25017540
 
 **RTL LOGIC UP COUNTER**
 
+<img width="1920" height="1080" alt="Screenshot (56)" src="https://github.com/user-attachments/assets/a8443bee-178b-4b73-bdc6-b989e5c1acdf" />
+
+
 **TIMING DIAGRAM FOR IP COUNTER**
+
+<img width="1920" height="1080" alt="Screenshot (57)" src="https://github.com/user-attachments/assets/32a0ca94-8a4f-4868-8a9a-9740593cdb9c" />
+
 
 **TRUTH TABLE**
 
+![jpeg](https://github.com/user-attachments/assets/19faa454-432f-41f2-a9ac-b830267db913)
+
+
 **RESULTS**
+
+Thus the Synchronous 3 bit Up Counter is implemented and verified.
